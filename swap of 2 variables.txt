@@ -1,0 +1,26 @@
+--swap two variables without using third variable
+
+
+--PL/SQL BLOCK:
+declare
+	a int;
+	b int;
+begin
+	a:=&a;
+	b:=&b;
+	dbms_output.put_line('Before swap a and b are'||a||' and '||b);
+	a:=a+b;
+	b:=a-b;
+	a:=a-b;
+	dbms_output.put_line('after swap a and b are'||a||' and '||b);
+end;
+/
+--output:
+Enter value for a: 3
+old   5:        a:=&a;
+new   5:        a:=3;
+Enter value for b: 4
+old   6:        b:=&b;
+new   6:        b:=4;
+Before swap a and b are3 and 4
+after swap a and b are4 and 3
